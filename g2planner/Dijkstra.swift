@@ -119,4 +119,17 @@ public class Dijkstra {
         case cheapest, fastest
     }
     
+    public class func prettyPrint(_ path: [Route]) {
+        if path.count > 0 {
+            for route in path {
+                print("\(route), £\(route.price), \(route.time)h")
+            }
+            print("Total price: £\(path.map({$0.price}).reduce(0, +))")
+            print("Total time: \(path.map({$0.time}).reduce(0, +))h")
+        } else {
+            print("No route found")
+        }
+        print("\n")
+    }
+    
 }

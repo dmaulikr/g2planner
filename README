@@ -1,0 +1,42 @@
+Example output:
+
+Routes from Boston to Mount Everest:
+
+Fastest:
+(Boston) -> (Montreal) [Plane], £85, 1h
+(Montreal) -> (Iceland) [Plane], £319, 7h
+(Iceland) -> (London) [Plane], £170, 3h
+(London) -> (Athens) [Plane], £219, 4h
+(Athens) -> (Lhasa) [Plane], £461, 11h
+(Lhasa) -> (Mount Everest) [Bus], £16, 6h
+Total price: £1270
+Total time: 32h
+
+
+Cheapest:
+(Boston) -> (Washington) [Bus], £18, 8h
+(Washington) -> (San Francisco) [Bus], £59, 57h
+(San Francisco) -> (Alaska) [Bus], £51, 46h
+(Alaska) -> (Shanghai) [Ferry], £174, 146h
+(Shanghai) -> (Bangkok) [Train], £110, 26h
+(Bangkok) -> (Thimphu) [Bus], £37, 30h
+(Thimphu) -> (Mount Everest) [Bus], £17, 6h
+Total price: £466
+Total time: 319h
+
+
+Cheapest (no bus):
+No route found
+
+
+Fastest (no plane):
+(Boston) -> (Amsterdam) [Ferry], £143, 117h
+(Amsterdam) -> (Berlin) [Train], £40, 4h
+(Berlin) -> (Budapest) [Train], £46, 6h
+(Budapest) -> (Samarkand) [Train], £134, 33h
+(Samarkand) -> (New Delhi) [Train], £81, 17h
+(New Delhi) -> (Bangkok) [Train], £109, 25h
+(Bangkok) -> (Thimphu) [Bus], £37, 30h
+(Thimphu) -> (Mount Everest) [Bus], £17, 6h
+Total price: £607
+Total time: 238h

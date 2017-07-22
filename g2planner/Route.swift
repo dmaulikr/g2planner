@@ -15,7 +15,7 @@ public class Route: Hashable, CustomStringConvertible {
     public private(set) var time: Int
     public private(set) var price: Int
     public var description: String {
-        return "(\(source)) -> (\(destination)) [\(method)]"
+        return "(\(source.rawValue)) -> (\(destination.rawValue)) [\(method)]"
     }
     
     init(from source: City, to destination: City, time: Int, price: Int, _ method: Method) {
@@ -24,10 +24,6 @@ public class Route: Hashable, CustomStringConvertible {
         self.method = method
         self.price = price
         self.time = time
-    }
-    
-    convenience init(from source: Cities, to destination: Cities, time: Int, price: Int, _ method: Method) {
-        self.init(from: City(source), to: City(destination), time: time, price: price, method)
     }
     
     public enum Method {

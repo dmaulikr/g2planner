@@ -12,8 +12,8 @@ let world = Map.createMap()
 
 let dijkstra = Dijkstra(world)
 
-let source = Cities.BOSTON
-let destination = Cities.SHANGHAI
+let source = City.BOSTON
+let destination = City.SHANGHAI
 
 var fastestPath = dijkstra.getRoute(from: source, to: destination, searchFor: Dijkstra.Parameter.fastest)
 var cheapestPath = dijkstra.getRoute(from: source, to: destination, searchFor: Dijkstra.Parameter.cheapest)

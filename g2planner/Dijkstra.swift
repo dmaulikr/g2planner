@@ -21,7 +21,7 @@ public class Dijkstra {
         edges = Array(map.routes)
     }
     
-    public func getRoute(from source: Cities, to destination: Cities, searchFor: Parameter, exclude exclusions: Route.Method...) -> [Route] {
+    public func getRoute(from source: City, to destination: City, searchFor: Parameter, exclude exclusions: Route.Method...) -> [Route] {
         for exclusion in exclusions {
             edges = edges.filter{$0.method != exclusion}
         }
@@ -29,15 +29,15 @@ public class Dijkstra {
         unSettledNodes = []
         predecessors = [:]
         distance = [:]
-        distance[City(source)] = 0
-        unSettledNodes.insert(City(source))
+        distance[source] = 0
+        unSettledNodes.insert(source)
         while unSettledNodes.count > 0 {
             let node = getMinimum(unSettledNodes)
             settledNodes.insert(node)
             unSettledNodes.remove(node)
             findMinimalDistances(node, searchFor)
         }
-        return getPath(City(destination))
+        return getPath(destination)
     }
     
     private func findMinimalDistances(_ node: City, _ searchFor: Parameter) {

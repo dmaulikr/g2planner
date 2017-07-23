@@ -6,8 +6,6 @@
 //
 //
 
-import Foundation
-
 public class Map {
     public private(set) var cities: Set<City> = []
     public private(set) var routes: Set<Route> = []

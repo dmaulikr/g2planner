@@ -8,17 +8,36 @@
 
 import Foundation
 
+let args = CommandLine.arguments
+if args.count < 3 {
+    print("Not enough parameters given")
+    exit(0)
+}
+
 let world = Map.createMap()
 
 let dijkstra = Dijkstra(world)
 
-let source = City.BOSTON
-let destination = City.MT_EVEREST
+let source: City
+let destination: City
 
-var fastestPath = dijkstra.getRoute(from: source, to: destination, searchFor: Dijkstra.Parameter.fastest)
-var fastestNoPlanePath = dijkstra.getRoute(from: source, to: destination, searchFor: Dijkstra.Parameter.fastest, exclude: Route.Method.Plane)
-var cheapestPath = dijkstra.getRoute(from: source, to: destination, searchFor: Dijkstra.Parameter.cheapest)
-var cheapestNoBusPath = dijkstra.getRoute(from: source, to: destination, searchFor: Dijkstra.Parameter.cheapest, exclude: Route.Method.Bus)
+if let from = City(rawValue: args[1]) {
+    source = from
+} else {
+    print("City \"\(args[1])\" not recognized")
+    exit(0)
+}
+if let to = City(rawValue: args[2]) {
+    destination = to
+} else {
+    print("City \"\(args[2])\" not recognized")
+    exit(0)
+}
+
+let fastestPath = dijkstra.getRoute(from: source, to: destination, searchFor: Dijkstra.Parameter.fastest)
+let fastestNoPlanePath = dijkstra.getRoute(from: source, to: destination, searchFor: Dijkstra.Parameter.fastest, exclude: Route.Method.Plane)
+let cheapestPath = dijkstra.getRoute(from: source, to: destination, searchFor: Dijkstra.Parameter.cheapest)
+let cheapestNoBusPath = dijkstra.getRoute(from: source, to: destination, searchFor: Dijkstra.Parameter.cheapest, exclude: Route.Method.Bus)
 
 print("Routes from \(source.rawValue) to \(destination.rawValue):\n")
 

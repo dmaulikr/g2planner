@@ -6,8 +6,6 @@
 //  Copyright © 2017 Martin Verup. All rights reserved.
 //
 
-import Foundation
-
 public enum City: String {
     case ALASKA = "Alaska"
     case AMAZONAS = "Amazonas"

@@ -122,10 +122,16 @@ public class Dijkstra {
     public class func prettyPrint(_ path: [Route]) {
         if path.count > 0 {
             for route in path {
-                print("\(route), £\(route.price), \(route.time)h")
+                let prettyRoute = "(\(route.source.rawValue))".padding(toLength: 16, withPad: " ", startingAt: 0)
+                    .appending(" -> ")
+                    .appending("(\(route.destination.rawValue))".padding(toLength: 16, withPad: " ", startingAt: 0))
+                    .appending("[\(route.method)],".padding(toLength: 9, withPad: " ", startingAt: 0))
+                    .appending("£\(route.price),".padding(toLength: 6, withPad: " ", startingAt: 0))
+                    .appending("\(route.time)h")
+                print(prettyRoute)
             }
             print("Total price: £\(path.map({$0.price}).reduce(0, +))")
-            print("Total time: \(path.map({$0.time}).reduce(0, +))h")
+            print("Total time:  \(path.map({$0.time}).reduce(0, +))h")
         } else {
             print("No route found")
         }
